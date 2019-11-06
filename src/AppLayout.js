@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import { About } from "./pages/About";
+import First from "./First.tsx";
+
 const Button = () => (
   <Route
     render={({ history }) => (
@@ -54,7 +57,15 @@ class AppLayout extends Component {
           </Col>
         </Row>
         <Row>
-          <Col>Footer</Col>
+          <Col>
+            Footer
+            <About
+              render={props => {
+                return <div>nice</div>;
+              }}
+            ></About>
+            <First></First>
+          </Col>
         </Row>
       </Container>
     );
